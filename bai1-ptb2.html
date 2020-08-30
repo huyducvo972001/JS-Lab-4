@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 - Lab 4</title>
+    <style>
+        body{
+            background-color: rgb(245, 245, 245);
+        }
+        .container{
+            margin: auto;
+            margin-top: 100px;
+            width: 700px;
+            background-color: rgb(155, 170, 170);
+            box-shadow: 5px 5px 5px rgb(168, 162, 162);
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        h2{
+            background-color: rgb(104, 81, 126);
+            text-align: center;
+            padding: 15px;
+            font-size: 30px;
+            color: white;
+            border-top-right-radius: 20px;
+        }
+        #pt{
+            text-align: center;
+            color: rgb(145, 18, 18);
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+        #kq{
+            text-align: center;
+            color: orange;
+            font-weight: bold;
+            margin-bottom: 50px;
+            font-size: 25px;
+           line-height: 50px;
+        }
+        .nut{
+            text-align: center;
+        }
+        button{
+            padding: 20px;
+            margin: 5px;
+            background-color: rgb(102, 98, 117);
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        var ptb2 = new Object();
+        ptb2.a = null;
+        ptb2.b = null;
+        ptb2.c = null;
+        ptb2.nhap = function(){
+            do{
+                this.a = window.prompt("Nhập số a: ");    
+            }while(isNaN(this.a) == true)
+
+            do{
+                this.b = window.prompt("Nhập số b: ");    
+            }while(isNaN(this.b) == true)
+            
+            do{
+                this.c = window.prompt("Nhập số c: ");
+            }while(isNaN(this.c) == true)
+            
+            str = this.a + "x<sup>2</sup> + " + this.b + "x + " + this.c + " = 0";
+            document.getElementById("pt").innerHTML=str;
+        }
+        ptb2.giai = function(){
+            var delta = this.b*this.b - 4*this.a*this.c;
+            if(delta<0){
+                dk1 = "Phương trình vô nghiệm.";
+                document.getElementById("kq").innerHTML = dk1;
+            }
+            else if (delta==0){
+                var x0 = -this.b/(2*this.a);
+                kq0 = "<p>Phương trình có nghiệm kép x = " + x0 +"</p>";
+                document.getElementById("kq").innerHTML = kq0;
+            }
+            else{
+                var x1 = (-this.b + Math.sqrt(delta))/(2*this.a);
+                var x2 = (-this.b - Math.sqrt(delta))/(2*this.a);
+                kq1 = "Phương trình có 2 nghiệm phân biệt: </br>"+"x<sub>1</sub>="+x1 + "</br>" + "x<sub>2</sub>="+x2;
+                document.getElementById("kq").innerHTML = kq1; 
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>GIẢI PHƯƠNG TRÌNH BẬC 2</h2>
+        <div id="pt">Phương trình</div>
+        <div id="kq">Kết quả</div>
+        <div class="nut">
+            <button onclick="ptb2.nhap()">Nhập hệ số A B C</button>
+            <button onclick="ptb2.giai()">Giải phương trình</button>
+        </div>
+    </div>
+</body>
+</html>

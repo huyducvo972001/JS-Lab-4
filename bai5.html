@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 - Lab 4</title>
+    <script>
+        function fover(){
+            var h = document.getElementById("hinh");
+            h.src="images/hinh2.jpg";
+        }
+        function fout(){
+            var h = document.getElementById("hinh");
+            h.src="images/hinh1.jpg";
+        }
+    </script>
+    <style>
+        body{
+            background-color: rgb(226, 226, 226);
+        }
+        .container{
+            width: 500px;
+            margin: auto;
+            margin-top: 70px;
+            border: 2px solid gray;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+        img{
+            width: 400px;
+            height: 550px;
+            padding: 20px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="hinh" src="images/championship-zed-splash.jpg" onmouseover="fover()" onmouseout="fout()" >
+    </div>
+</body>
+</html>

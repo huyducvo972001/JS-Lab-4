@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 - Lab 4</title>
+    <script>
+        var dh=null;
+        function tg(){
+            var now = new Date();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+            document.getElementById("dongho").innerHTML = h + ":" + m + ":" + s ; 
+        }
+        function startstopDH(){
+            if(dh==null) dh = setInterval("tg()",1000);
+            else{
+                clearInterval(dh);
+                dh=null;
+            }
+        }
+    
+        function loichao() {
+            setTimeout(function(){ alert("Tôi là Võ Đức Huy. Chào bạn! Chúc bạn an lành."); }, 10000);
+        }      
+    </script>
+    <style>
+        .container { width: 1140px; margin:auto; border:1px solid darkgrey}
+        header { background: darkolivegreen; height: 120px; position: relative;}
+        main{ background: darkseagreen; min-height: 400px;}
+        footer { background: darkslategray; height: 100px;}
+        #dongho{
+            color: white;  
+            position: absolute; 
+            right: 20px; 
+            top: 5px;  
+            border: none;  
+            background-color: darkolivegreen;     
+            font-size: 50px;
+        }
+        button{
+            background-color: white;
+            border: none;
+            padding: 100px;
+            margin-left: 330px;
+            margin-top: 40px;
+            font-size: 100px;
+            color: teal;
+            border-radius: 20px;
+        }
+        footer{
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 30px;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span id="dongho">
+                <script>
+                    dh = setInterval("tg()",1000);
+                </script>
+            </span>
+        </header>
+        <main><button onclick="loichao()">Nạp lại</button></main>
+        <footer>Võ Đức Huy - PS14504</footer>
+    </div>
+</body>
+</html>

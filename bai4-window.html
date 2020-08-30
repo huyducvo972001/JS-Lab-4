@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4 - Lab 4</title>
+    <script>
+        var w; 
+        
+        function moWin(){
+            w = window.open("thongtin.html", "tt", "width=400, height=200, top=50, left=600");
+            w.focus();
+        }
+
+        function diChuyen1Chut(){
+            w.moveBy(5,10);
+            w.focus();
+        }
+
+        function diChuyenToiTD(){
+            var x = prompt("Nhập x: ");
+            var y = prompt("Nhập y: ")
+            w.moveTo(x, y);
+            w.focus();
+        }
+    </script>
+    <style>
+        body{
+            background-color: thistle;
+        }
+        .container{
+            width: 1000px;
+            margin: auto;
+            margin-top: 100px;
+            border: 2px solid rebeccapurple;
+            background-color: rgb(233, 233, 233);
+            border-radius: 15px;
+        }
+        h1{
+            text-align: center;
+            color: brown;
+            margin-bottom: 30px;
+        }
+        button{
+            padding: 10px;
+            width: 220px;
+            margin: 20px;
+            border: none;
+            background-color: rgb(179, 216, 105);
+            font-size: 20px;
+            margin-left: 70px;
+            background-color: white;
+            box-shadow: 5px 5px 5px grey;
+            color: blueviolet;
+            font-weight: ;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thực hành với đối tượng Window</h1>
+        <button onclick="moWin()">Mở win</button>
+        <button onclick="window.print()">In ấn</button>
+        <button onclick="diChuyen1Chut()">Di chuyển 1 chút</button>
+        <button onclick="diChuyenToiTD()">Di chuyển tới 1 điểm</button>
+        <button onclick="w.close()">Đóng win</button>
+    </div>
+</body>
+</html>
